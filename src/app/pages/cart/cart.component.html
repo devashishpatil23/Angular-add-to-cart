@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <h3>Your Cart</h3>
+
+  <div *ngIf="cart.length === 0" class="alert alert-info">
+    Your cart is empty. Add some items to the cart.
+  </div>
+
+  <div *ngFor="let item of cart" class="cart-item">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-3">
+        <img
+          height="130px"
+          [src]="item.image"
+          alt="Product Image"
+          class="img-fluid"
+        />
+      </div>
+      <div class="col-12 col-md-6">
+        <h5>{{ item.name }}</h5>
+        <p>Category: {{ item.category }}</p>
+        <p>Color: {{ item.color }}</p>
+      </div>
+      <div
+        class="col-12 col-md-3 d-flex justify-content-between align-items-center"
+      >
+        <span class="price">{{ item.price }}</span>
+        <div class="quantity-control">
+          <button
+            (click)="updateQuantity(item, 'min')"
+            class="btn btn-secondary"
+          >
+            -
+          </button>
+          <span class="mx-2">{{ item.quantity }}</span>
+          <button
+            (click)="updateQuantity(item, 'add')"
+            class="btn btn-secondary"
+          >
+            +
+          </button>
+        </div>
+        <button (click)="removeFromCart(item.id)" class="btn btn-danger">
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-summary mt-4">
+    <div class="d-flex justify-content-end">
+      <span>Total Quantity: {{ totalQuantity }}</span>
+    </div>
+    <div class="d-flex justify-content-end">
+      <span>Total Price: {{ totalPrice }}</span>
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-success mt-3">Proceed to Checkout</button>
+    </div>
+  </div>
+</div>

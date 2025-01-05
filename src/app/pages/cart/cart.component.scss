@@ -1,0 +1,28 @@
+.cart-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.cart-summary {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.quantity-control button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+button {
+  margin: 5px 0;
+}
+
+.container {
+  max-width: 1200px;
+}
