@@ -9,10 +9,10 @@ export class ProductService {
   http: HttpClient = inject(HttpClient);
 
   getProducts() {
-    return this.http.get<Product[]>('http://localhost:3000/products');
+    return this.http.get<Product[]>('https://addtocart-db-5.onrender.com/products');
   }
 
   getProductById(id: number) {
-    return this.http.get<Product>(`http://localhost:3000/products/${id}`);
+    return this.http.get<Product>(`https://addtocart-db-5.onrender.com/products/${id}`);
   }
 }

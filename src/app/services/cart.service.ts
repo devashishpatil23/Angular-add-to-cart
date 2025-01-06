@@ -28,7 +28,7 @@ export class CartService {
   fetchCartFronDb() {
     if (this.userId) {
       this.http
-        .get<User>(`http://localhost:3000/users/${this.userId}`)
+        .get<User>(`https://addtocart-db-5.onrender.com/users/${this.userId}`)
         .subscribe((userData) => {
           const cart = userData.cart || [];
           this.cartSubject.next(cart);
@@ -44,7 +44,7 @@ export class CartService {
   addToCart(product: Product, quantity: number = 1): void {
     if (this.userId) {
       this.http
-        .put(`http://localhost:3000/users/${this.userId}`, {
+        .put(`https://addtocart-db-5.onrender.com/users/${this.userId}`, {
           cart: [...this.cartSubject.getValue(), { ...product, quantity }],
         })
         .subscribe(() => {
@@ -75,7 +75,7 @@ export class CartService {
         product.id !== productId;
       });
       this.http
-        .put(`http://localhost:3000/users/${this.userId}`, {
+        .put(`https://addtocart-db-5.onrender.com/users/${this.userId}`, {
           cart: upadtedCart,
         })
         .subscribe(() => {
@@ -97,7 +97,7 @@ export class CartService {
           item.id === productId ? { ...item, quantity: newQuantity } : item
         );
       this.http
-        .put(`http://localhost:3000/users/${this.userId}`, {
+        .put(`https://addtocart-db-5.onrender.com/users/${this.userId}`, {
           cart: upadtedCart,
         })
         .subscribe(() => {
@@ -121,7 +121,7 @@ export class CartService {
     if (this.userId) {
       // Clear cart from the DB for logged-in users
       this.http
-        .put(`http://localhost:3000/users/${this.userId}`, { cart: [] })
+        .put(`https://addtocart-db-5.onrender.com/users/${this.userId}`, { cart: [] })
         .subscribe(() => {
           this.cartSubject.next([]); // Clear cart after syncing with DB
         });

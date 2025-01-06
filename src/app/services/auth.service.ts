@@ -20,7 +20,7 @@ export class AuthService {
   login(user: User) {
     return this.http
       .get<User[]>(
-        `http://localhost:3000/users?userName=${user.userName}&password=${user.password}`
+        `https://addtocart-db-5.onrender.com/users?userName=${user.userName}&password=${user.password}`
       )
       .pipe(
         map((users) => {
@@ -30,7 +30,7 @@ export class AuthService {
 
             if (localCart.length > 0) {
               this.http
-                .put(`http://localhost:3000/users/${user.id}`, {
+                .put(`https://addtocart-db-5.onrender.com/users/${user.id}`, {
                   ...user,
                   cart: localCart,
                 })
