@@ -71,9 +71,9 @@ export class CartService {
 
   removeFromCart(productId: number) {
     if (this.userId) {
-      const upadtedCart = this.cartSubject.getValue().filter((product) => {
-        product.id !== productId;
-      });
+      const upadtedCart = this.cartSubject
+        .getValue()
+        .filter((product) => product.id !== productId);
       this.http
         .put(`https://addtocart-db-5.onrender.com/users/${this.userId}`, {
           cart: upadtedCart,
@@ -114,14 +114,23 @@ export class CartService {
   }
 
   isProductInCart(productId: number): boolean {
-    const cart = this.getCart();
-    return cart.some((product: Product) => product.id === productId);
+    if (this.userId) {
+      // Check the cart from BehaviorSubject for logged-in users
+      const cart = this.cartSubject.getValue();
+      return cart.some((product: Product) => product.id === productId);
+    } else {
+      // Fallback to localStorage for non-logged-in users
+      const cart = this.getCart();
+      return cart.some((product: Product) => product.id === productId);
+    }
   }
   clearCart(): void {
     if (this.userId) {
       // Clear cart from the DB for logged-in users
       this.http
-        .put(`https://addtocart-db-5.onrender.com/users/${this.userId}`, { cart: [] })
+        .put(`https://addtocart-db-5.onrender.com/users/${this.userId}`, {
+          cart: [],
+        })
         .subscribe(() => {
           this.cartSubject.next([]); // Clear cart after syncing with DB
         });

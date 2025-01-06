@@ -1,0 +1,21 @@
+[debug] [2025-01-06T12:01:42.840Z] ----------------------------------------------------------------------
+[debug] [2025-01-06T12:01:42.844Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\devas\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-01-06T12:01:42.844Z] CLI Version:   13.29.1
+[debug] [2025-01-06T12:01:42.844Z] Platform:      win32
+[debug] [2025-01-06T12:01:42.844Z] Node Version:  v22.11.0
+[debug] [2025-01-06T12:01:42.845Z] Time:          Mon Jan 06 2025 17:31:42 GMT+0530 (India Standard Time)
+[debug] [2025-01-06T12:01:42.845Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-06T12:01:42.854Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-06T12:01:42.854Z] > authorizing via signed-in user (devashishpatil23@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\projects\Angular\Angular-add-to-cart
+
