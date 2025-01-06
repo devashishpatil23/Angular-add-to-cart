@@ -109,7 +109,7 @@ export class CartService {
         item.id === productId ? { ...item, quantity: newQuantity } : item
       );
       localStorage.setItem('cart', JSON.stringify(upadtedCart));
-      this.cartSubject.next(cart);
+      this.cartSubject.next(upadtedCart);
     }
   }
 

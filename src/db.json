@@ -3,34 +3,14 @@
     {
       "cart": [
         {
-          "name": "Noise Smart Watch",
-          "price": "2000",
-          "category": "Watch",
-          "color": "Black",
-          "description": "Noise smart watch for man and women both",
-          "image": "https://www.reliancedigital.in/medias/Noise-Colorfit-Pro-2-Smart-Watch-491900986-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w1MDc0NXxpbWFnZS9qcGVnfGltYWdlcy9oYzkvaDdjLzk1OTE4MjA3NDY3ODIuanBnfDA3MjZlMzkzOTExYzMyNzk5Y2YzOTk0MWFkMjc5YjE5OTlkMDE4NzYzYTg1YzQ2YmNjZjMxYzc5ZDJiYjBlNDg",
-          "id": 7,
-          "quantity": 2
-        },
-        {
-          "name": "I phone 14",
-          "price": "100000",
-          "category": "mobile",
+          "name": "HP Laptop",
+          "price": "50000",
+          "category": "Laptop",
           "color": "black",
-          "description": "An Apple Product",
-          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
-          "id": 2,
-          "quantity": 1
-        },
-        {
-          "name": "I phone 14",
-          "price": "100000",
-          "category": "mobile",
-          "color": "black",
-          "description": "An Apple Product",
-          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
-          "id": 2,
-          "quantity": 1
+          "description": "Hp laptop for student and professionals",
+          "image": "https://www.91-cdn.com/hub/wp-content/uploads/2022/07/Top-laptop-brands-in-India.jpg",
+          "id": 3,
+          "quantity": 6
         }
       ],
       "id": 1
