@@ -26,6 +26,19 @@ export class AuthService {
         map((users) => {
           if (users.length > 0) {
             const user = users[0];
+            const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+            if (localCart.length > 0) {
+              this.http
+                .put(`http://localhost:3000/users/${user.id}`, {
+                  ...user,
+                  cart: localCart,
+                })
+                .subscribe((data) => {
+                  console.log(data);
+                  localStorage.removeItem('cart');
+                });
+            }
             localStorage.setItem('user', JSON.stringify(user));
             this.userSubject.next(user);
             return true;
@@ -36,7 +49,7 @@ export class AuthService {
   }
 
   logout(): void {
-      localStorage.removeItem('user');
+    localStorage.removeItem('user');
     this.userSubject.next(null);
   }
 }

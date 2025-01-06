@@ -1,9 +1,39 @@
 {
   "users": [
     {
-      "id": 1,
-      "userName": "user",
-      "password": "1234"
+      "cart": [
+        {
+          "name": "Noise Smart Watch",
+          "price": "2000",
+          "category": "Watch",
+          "color": "Black",
+          "description": "Noise smart watch for man and women both",
+          "image": "https://www.reliancedigital.in/medias/Noise-Colorfit-Pro-2-Smart-Watch-491900986-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w1MDc0NXxpbWFnZS9qcGVnfGltYWdlcy9oYzkvaDdjLzk1OTE4MjA3NDY3ODIuanBnfDA3MjZlMzkzOTExYzMyNzk5Y2YzOTk0MWFkMjc5YjE5OTlkMDE4NzYzYTg1YzQ2YmNjZjMxYzc5ZDJiYjBlNDg",
+          "id": 7,
+          "quantity": 2
+        },
+        {
+          "name": "I phone 14",
+          "price": "100000",
+          "category": "mobile",
+          "color": "black",
+          "description": "An Apple Product",
+          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+          "id": 2,
+          "quantity": 1
+        },
+        {
+          "name": "I phone 14",
+          "price": "100000",
+          "category": "mobile",
+          "color": "black",
+          "description": "An Apple Product",
+          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+          "id": 2,
+          "quantity": 1
+        }
+      ],
+      "id": 1
     }
   ],
   "products": [

@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div class="cart-summary mt-4">
+  <div *ngIf="cart.length" class="cart-summary mt-4">
     <div class="d-flex justify-content-end">
       <span>Total Quantity: {{ totalQuantity }}</span>
     </div>
