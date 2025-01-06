@@ -22,6 +22,7 @@ export class CartComponent implements OnInit {
       this.cart = cart;
       this.calculateTotals();
     });
+    console.log(this.totalPrice);
   }
 
   removeFromCart(productId: number): void {
@@ -43,7 +44,7 @@ export class CartComponent implements OnInit {
       0
     );
     this.totalPrice = this.cart.reduce(
-      (total, item) => total + Number(item) * (item.quantity || 1),
+      (total, item) => total + Number(item.price) * (item.quantity || 1),
       0
     );
   }
