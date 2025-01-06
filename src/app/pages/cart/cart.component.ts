@@ -1,46 +1,39 @@
-import { Component, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Product } from '../../models/interface';
 import { CartService } from '../../services/cart.service';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss'],
+  styleUrl: './cart.component.scss',
 })
-export class CartComponent implements OnInit, OnDestroy {
+export class CartComponent implements OnInit {
   cart: Product[] = [];
   cartService: CartService = inject(CartService);
   totalQuantity: number = 0;
   totalPrice: number = 0;
-  private destroy$ = new Subject<void>(); // Subject to handle unsubscription
 
   ngOnInit(): void {
-    // Subscribe to cart updates
-    this.cartService.cartSubject
-      .pipe(takeUntil(this.destroy$)) // Automatically unsubscribe on component destroy
-      .subscribe((cart) => {
-        this.cart = cart;
-        this.calculateTotals();
-      });
+    this.getCartItem();
   }
 
-  ngOnDestroy(): void {
-    // Clean up the subscription when the component is destroyed
-    this.destroy$.next();
-    this.destroy$.complete();
+  getCartItem() {
+    this.cartService.cartSubject.subscribe((cart) => {
+      this.cart = cart;
+      this.calculateTotals();
+    });
   }
 
   removeFromCart(productId: number): void {
     this.cartService.removeFromCart(productId);
   }
 
-  updateQuantity(item: Product, action: 'add' | 'min'): void {
+  updateQuantity(item: Product, action: 'add' | 'min') {
     const currentQuantity = item.quantity ?? 1; // Default to 1 if undefined
-    const newQuantity = action === 'add' ? currentQuantity + 1 : currentQuantity - 1;
+    const newQuantity =
+      action === 'add' ? currentQuantity + 1 : currentQuantity - 1;
 
-    if (newQuantity < 1) return; // Prevent quantity from going below 1
+    if (newQuantity < 1) return;
     this.cartService.updateCartItemQuantity(item.id, newQuantity);
   }
 
@@ -49,9 +42,8 @@ export class CartComponent implements OnInit, OnDestroy {
       (total, item) => total + (item.quantity || 0),
       0
     );
-
     this.totalPrice = this.cart.reduce(
-      (total, item) => total + (Number(item.price) || 0) * (item.quantity || 1),
+      (total, item) => total + Number(item) * (item.quantity || 1),
       0
     );
   }
